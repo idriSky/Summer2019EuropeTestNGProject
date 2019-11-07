@@ -10,7 +10,7 @@ public class verifyComfimationMessage {
     /**Verify confirmation message
      1. open browser
      2. go to http://practice.cybertekschool.com/forgot_password
-     3.Links to an external site.
+     3. Links to an external site.
      4. enter any email
      5. verify that email is displayed in the input box
      6. click on Retrieve password
