@@ -25,7 +25,8 @@ public class fleet {
         Actions action = new Actions(driver);
         WebElement fleet = driver.findElement(By.xpath("//*[@id=\"main-menu\"]/ul/li[2]/a/span"));
         action.moveToElement(fleet).build().perform();
-        driver.findElement(By.xpath("")).click();
+        WebElement contract =driver.findElement(By.xpath(""));
+        contract.click();
 
         //driver.quit();
     }
