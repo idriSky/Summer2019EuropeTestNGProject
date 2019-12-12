@@ -20,7 +20,7 @@ public class NoSelectDropdown {
 
         dropdownElement.click();
 
-        List<WebElement> ListOfLinks   =driver.findElements(By.className("dropdown-item"));
+        List<WebElement> ListOfLinks = driver.findElements(By.className("dropdown-item"));
 
         System.out.println("Number of links: "+ListOfLinks.size());
 
@@ -29,7 +29,7 @@ public class NoSelectDropdown {
 
         }
 
-        ListOfLinks.get(1).click();
+        ListOfLinks.get(1);
 
 
 

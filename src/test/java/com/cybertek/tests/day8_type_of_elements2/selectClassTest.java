@@ -21,6 +21,8 @@ public class selectClassTest {
 
         Select stateList = new Select(dropDownElement);
 
+
+
         // returns all the available options of the dropdown
         List<WebElement> options = stateList.getOptions();
 
