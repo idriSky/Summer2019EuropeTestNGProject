@@ -1,7 +1,6 @@
 package com.cybertek.tests.day14_pom_test;
 
-import com.cybertek.pages.BasePage;
-import com.cybertek.pages.CalenderEventsPage;
+import com.cybertek.pages.CalendarEventsPage;
 import com.cybertek.pages.DashboardPage;
 import com.cybertek.pages.LoginPage;
 import com.cybertek.tests.TestBase;
@@ -36,7 +35,7 @@ public class PageSubtitleTest extends TestBase {
 
         dashboardPage.navigateToModule("Activities","Calendar Events");
 
-        CalenderEventsPage calenderEventsPage = new CalenderEventsPage();
+        CalendarEventsPage calenderEventsPage = new CalendarEventsPage();
         String expectedSubtitle1 = "Calendar Events";
         String actualSubtitle1 =calenderEventsPage.getPageSubTitle();
         Assert.assertEquals(expectedSubtitle1,actualSubtitle1,"verify subtitle ");
