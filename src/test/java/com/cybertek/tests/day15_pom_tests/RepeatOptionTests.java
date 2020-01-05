@@ -1,4 +1,4 @@
-package com.cybertek.tests.day_15_pom_tests;
+package com.cybertek.tests.day15_pom_tests;
 
 import com.cybertek.pages.CalendarEventsPage;
 import com.cybertek.pages.CreateCalendarEventsPage;
@@ -7,7 +7,6 @@ import com.cybertek.pages.LoginPage;
 import com.cybertek.tests.TestBase;
 import com.cybertek.utilities.BrowserUtils;
 import com.cybertek.utilities.ConfigurationReader;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
