@@ -49,6 +49,25 @@ public class CreateCalendarEventsPage extends BasePage {
     @FindBy(xpath = "(//input[@type='radio'])[5]")
     public WebElement by;
 
+    @FindBy(xpath = "//*[@title='Create Calendar event']")
+    public WebElement createCalendarEvent;
+
+    @FindBy(xpath = "//*[@title='Cancel']")
+    public WebElement cancel;
+
+    @FindBy(xpath = "//*[@class='btn-success btn dropdown-toggle']")
+    public WebElement saveAndClose1;
+
+    @FindBy(xpath = "//*[@class='action-button dropdown-item']")
+    public WebElement saveAndClose2;
+
+    @FindBy(xpath = "(//*[@class='main-group action-button dropdown-item'])[1]")
+    public WebElement saveAndNew;
+
+    @FindBy (xpath = "(//*[@class='main-group action-button dropdown-item'])[2]")
+    public WebElement save;
+
+
     public Select repeatOptionsList(){
         return new Select(repeatOptions);
     }

@@ -39,14 +39,24 @@ public class TestCase4 extends TestBase {
         dashboardPage.navigateToModule("Activities","Calendar Events");
         extentLogger.info("Navigate to Activities than Calender Events");
 
+        CalendarEventsPage calendarEventsPage = new CalendarEventsPage();
+        calendarEventsPage.waitUntilLoaderScreenDisappear();
+
+
         WebElement threeDots = driver.findElement(By.cssSelector(".grid-row:nth-child(5) .dropdown-toggle"));
         actions.moveToElement(threeDots).perform();
         extentLogger.info("Hover over on three dots for Tester meeting calender event");
+        BrowserUtils.waitFor(2);
+        //WebElement xx = driver.findElement(By.xpath("(/html/body/ul/li/ul/li/a)[1]"));
+       // Assert.assertTrue(xx.isDisplayed());
 
-        WebElement showIcon = driver.findElement(By.xpath("//*[@id=\"grid-calendar-event-grid-455051619\"]/div[2]/div[2]/div[2]/div/table/tbody/tr[17]/td[9]/div/div/ul/li/ul/li[1]/a/i"));
-
-       Assert.assertTrue(showIcon.isDisplayed());
-
+        for(int i =1; i<4 ; i++){
+        String icon = "(/html/body/ul/li/ul/li/a)["+i+"]" ;
+           // System.out.println(icon);
+        WebElement icons = driver.findElement(By.xpath(icon));
+            System.out.println(icons.getAttribute("value"));
+            Assert.assertTrue(icons.isDisplayed());
+    }
         extentLogger.pass("PASS");
 
     }
@@ -73,13 +83,12 @@ public class TestCase4 extends TestBase {
         CalendarEventsPage calendarEventsPage = new CalendarEventsPage();
         calendarEventsPage.waitUntilLoaderScreenDisappear();
 
-        driver.findElement(By.xpath("//*[@class='fa-cog hide-text']")).click();
-
+        calendarEventsPage.grid.click();
         extentLogger.info("click on grid option button");
 
-
-        for (int i=2; i<8; i++) {
-            String options = "//*[@id=\"column-c91" + i + "\"]";
+        //column-c103
+        for (int i=3; i<9; i++) {
+            String options = "//*[@id='column-c10'" + i + "]";
             WebElement optionClick = driver.findElement(By.xpath(options));
             optionClick.click();
         }
@@ -107,11 +116,34 @@ public class TestCase4 extends TestBase {
 
         dashboardPage.navigateToModule("Activities","Calendar Events");
         extentLogger.info("Navigate to Activities than Calender Events");
-        dashboardPage.waitUntilLoaderScreenDisappear();
+        //dashboardPage.waitUntilLoaderScreenDisappear();
 
-       WebElement CcE = driver.findElement(By.xpath("//*[@title='Create Calendar event']"));
+        CalendarEventsPage calendarEventsPage = new CalendarEventsPage();
+        calendarEventsPage.waitUntilLoaderScreenDisappear();
+
+        calendarEventsPage.createCalendarEvent.click();
         extentLogger.info("Click on Create Calendar Events Button");
 
+        CreateCalendarEventsPage createCalendarEventsPage = new CreateCalendarEventsPage();
+        createCalendarEventsPage.waitUntilLoaderScreenDisappear();
+
+        createCalendarEventsPage.waitUntilLoaderScreenDisappear();
+        createCalendarEventsPage.saveAndClose1.click();
+        extentLogger.info("click on Create Calendar Event button");
+
+        Assert.assertTrue(createCalendarEventsPage.saveAndClose2.isDisplayed());
+        System.out.println(createCalendarEventsPage.saveAndClose2.getText());
+        extentLogger.info("save and close is available");
+
+        Assert.assertTrue(createCalendarEventsPage.saveAndNew.isDisplayed());
+        System.out.println(createCalendarEventsPage.saveAndNew.getText());
+        extentLogger.info("save and new is available");
+
+        Assert.assertTrue(createCalendarEventsPage.save.isDisplayed());
+        System.out.println(createCalendarEventsPage.save.getText());
+        extentLogger.info("save is available");
+
+        extentLogger.pass("PASS: Save and Close test  ");
 
 
     }
@@ -136,12 +168,15 @@ public class TestCase4 extends TestBase {
         extentLogger.info("Navigate to Activities than Calender Events");
         dashboardPage.waitUntilLoaderScreenDisappear();
 
-        driver.findElement(By.xpath("//*[@title='Create Calendar event']")).click();
+        CalendarEventsPage calendarEventsPage = new CalendarEventsPage();
+        calendarEventsPage.waitUntilLoaderScreenDisappear();
+        calendarEventsPage.createCalendarEvent.click();
         extentLogger.info("Click on Create Calendar Events Button");
 
         CreateCalendarEventsPage createCalendarEventsPage = new CreateCalendarEventsPage();
-        BrowserUtils.waitFor(6);
-        driver.findElement(By.xpath("//*[@title='Cancel']")).click();
+        createCalendarEventsPage.waitUntilLoaderScreenDisappear();
+
+        createCalendarEventsPage.cancel.click();
         extentLogger.info("Click on Cancel button");
 
        Assert.assertTrue(createCalendarEventsPage.pageSubTitle.isDisplayed(),"Verify page subtitle");

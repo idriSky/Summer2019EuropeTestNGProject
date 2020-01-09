@@ -41,9 +41,9 @@ public class positiveLoginTest extends TestBase {
         LoginPage loginPage = new LoginPage();
 
         String username = ConfigurationReader.get("driver_username");
-        String pasword = ConfigurationReader.get("UserUser123");
+        String password = ConfigurationReader.get("driver_password");
 
-        loginPage.login(username,pasword);
+        loginPage.login(username,password);
 
 
 
